@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Hannah's Catering Service</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+
+    /* =========================
+       PAGE
+       ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+
+      background:
+        url("https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600")
+        center / cover no-repeat fixed;
+
+      color: white;
+      position: relative;
+    }
+
+
+    /* =========================
+       DARK OVERLAY
+       ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.35);
+
+      z-index: 0;
+      pointer-events: none;
+    }
+
+
+    /* =========================
+       HAMBURGER MENU
+       ========================= */
+
+    .menu-container {
+      position: absolute;
+
+      top: 20px;
+      left: 20px;
+
+      z-index: 20;
+    }
+
+
+    /* THREE BARS BUTTON */
+
+    .menu-button {
+      width: 55px;
+      height: 55px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: rgba(0, 0, 0, 0.65);
+
+      color: white;
+
+      font-size: 30px;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+    }
+
+
+    .menu-button:hover {
+      background: rgba(240, 198, 116, 0.9);
+
+      color: #222;
+
+      transform: scale(1.05);
+    }
+
+
+    /* =========================
+       DROPDOWN MENU
+       ========================= */
+
+    .dropdown-menu {
+      position: absolute;
+
+      top: 65px;
+      left: 0;
+
+      width: 220px;
+
+      background: rgba(0, 0, 0, 0.9);
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.5);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(-10px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+
+    /* SHOW MENU */
+
+    .dropdown-menu.show {
+      opacity: 1;
+
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+
+    /* =========================
+       MENU LINKS
+       ========================= */
+
+    .dropdown-menu a {
+      display: block;
+
+      padding: 16px 20px;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 2.0rem;
+
+      font-weight: bold;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      transition: 0.25s ease;
+    }
+
+
+    .dropdown-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .hero-des1 {
+      color: white;
+      display: block;
+      text-decoration: none;
+      font-size: 2.0rem;
+      font-weight: bold;
+
+    }
+
+    .dropdown-menu a:hover {
+      background: #f0c674;
+
+      color: #222;
+
+      padding-left: 28px;
+    }
+
+
+    /* =========================
+       CHEF IMAGE
+       ========================= */
+
+    .chef-image {
+      position: absolute;
+
+      top: 20px;
+      right: 20px;
+
+      width: 140px;
+      height: 140px;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      border: 4px solid white;
+
+      box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.5);
+
+      z-index: 10;
+    }
+
+
+    .chef-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 20px;
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .hero-content {
+      max-width: 850px;
+
+      animation:
+        heroAppear 5s ease-out forwards;
+
+      opacity: 0;
+    }
+
+
+    /* =========================
+       HANNAH'S CATERING SERVICE
+       ========================= */
+
+    .hero-subtitle {
+      text-transform: uppercase;
+
+      letter-spacing: 5px;
+
+      font-size: 1.2rem;
+
+      font-weight: normal;
+
+      margin: 0 0 25px;
+
+      color: #f0c674;
+
+      text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.8);
+
+      border-bottom:
+        2px solid #f0c674;
+
+      display: inline-block;
+
+      padding-bottom: 8px;
+    }
+
+
+    /* =========================
+       MAIN TITLE
+       ========================= */
+
+    .hero h1 {
+      font-family: Georgia, serif;
+
+      font-size:
+        clamp(3rem, 7vw, 6rem);
+
+      font-weight: normal;
+
+      line-height: 1.05;
+
+      margin: 0 0 30px;
+
+      text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.8);
+    }
+
+
+    /* =========================
+       DESCRIPTION
+       ========================= */
+
+    .hero-description {
+      font-size: 1.2rem;
+
+      line-height: 1.7;
+
+      max-width: 650px;
+
+      margin: 0 auto;
+
+      color:
+        rgba(255, 255, 255, 0.95);
+
+      text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+
+    /* =========================
+       HERO ANIMATION
+       ========================= */
+
+    @keyframes heroAppear {
+
+      0% {
+        opacity: 0;
+
+        transform:
+          translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .menu-container {
+        top: 15px;
+        left: 15px;
+      }
+
+
+      .menu-button {
+        width: 50px;
+        height: 50px;
+
+        font-size: 27px;
+      }
+
+
+      .dropdown-menu {
+        top: 60px;
+
+        width: 200px;
+      }
+
+
+      .chef-image {
+        width: 90px;
+        height: 90px;
+
+        top: 15px;
+        right: 15px;
+      }
+
+
+      .hero {
+        padding:
+          150px
+          20px
+          60px;
+      }
+
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 20px;
+      }
+
+
+      .hero h1 {
+        font-size:
+          clamp(2.5rem, 12vw, 4rem);
+
+        margin-bottom: 25px;
+      }
+
+
+      .hero-description {
+        font-size: 1rem;
+
+        line-height: 1.6;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HAMBURGER MENU
+       ========================= -->
+
+  <div class="menu-container">
+
+    <button
+      class="menu-button"
+      onclick="toggleMenu()"
+      aria-label="Open navigation menu"
+    >
+      ☰
+    </button>
+
+
+    <div
+      class="dropdown-menu"
+      id="dropdownMenu"
+    >
+
+      <a href="catering.html">
+        Catering
+      </a>
+
+      <a href="menu.html">
+        Menu
+      </a>
+
+      <a href="contact.html">
+        Get in Touch
+      </a>
+
+      <a href="meet-chef.html">
+        Meet The Chef
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CHEF IMAGE
+       ========================= -->
+
+  <div class="chef-image">
+
+    <img
+      src="images/meet-chef.jpg"
+      alt="Hannah, Chef"
+    >
+
+  </div>
+
+
+  <!-- =========================
+       HERO SECTION
+       ========================= -->
+
+  <main class="hero">
+
+    <div class="hero-content">
+
+      <p class="hero-subtitle">
+        Hannah's Catering Service
+      </p>
+
+
+      <p class="hero-des1">
+        Delicious Food.
+        Beautifully Served.
+      </p>
+
+
+      <p class="hero-description">
+        Premium catering for weddings, corporate events,
+        private dining and special occasions.
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu =
+        document.getElementById("dropdownMenu");
+
+      menu.classList.toggle("show");
+
+    }
+
+
+    /* Close menu if user clicks outside it */
+
+    document.addEventListener("click", function(event) {
+
+      const menuContainer =
+        document.querySelector(".menu-container");
+
+      const menu =
+        document.getElementById("dropdownMenu");
+
+      if (!menuContainer.contains(event.target)) {
+
+        menu.classList.remove("show");
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>

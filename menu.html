@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hannah's Kitchen Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+
+    .header {
+      padding: 20px;
+      background: #c0392b;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 6px solid #c0392b;
+      padding-left: 12px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .item:hover {
+      transform: scale(1.02);
+    }
+
+    .item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .item-content {
+      padding: 15px;
+    }
+
+    .item h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      color: #c0392b;
+    }
+
+    .item p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">Hannah's Kitchen Menu</div>
+
+  <!-- STARTERS -->
+  <div class="section">
+    <h2>Starters</h2>
+    <div class="menu-grid">
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Mezze Platter</h3>
+          <p>Hummus, baba ganoush, olives, warm flatbread.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Falafel Bites</h3>
+          <p>Crispy falafel with tahini dip.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAINS -->
+  <div class="section">
+    <h2>Mains</h2>
+    <div class="menu-grid">
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Grilled Chicken Skewers</h3>
+          <p>Marinated chicken served with rice and salad.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Beef Shawarma</h3>
+          <p>Slow‑cooked beef with garlic sauce and pickles.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIDES -->
+  <div class="section">
+    <h2>Sides</h2>
+    <div class="menu-grid">
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Tabbouleh</h3>
+          <p>Fresh parsley salad with lemon and bulgur.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Roasted Vegetables</h3>
+          <p>Seasonal vegetables roasted with herbs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="section">
+    <h2>Desserts</h2>
+    <div class="menu-grid">
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/302680/pexels-photo-302680.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Baklava</h3>
+          <p>Sweet pastry with nuts and honey.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/410999/pexels-photo-410999.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Rose Milk Pudding</h3>
+          <p>Light and fragrant Middle Eastern dessert.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="section">
+    <h2>Drinks</h2>
+    <div class="menu-grid">
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Mint Lemonade</h3>
+          <p>Fresh mint blended with lemon and ice.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <div class="item-content">
+          <h3>Rose Iced Tea</h3>
+          <p>Floral iced tea with a sweet finish.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
