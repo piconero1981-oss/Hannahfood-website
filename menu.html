@@ -1,205 +1,1630 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Hannah's Kitchen Menu</title>
+
+  <title>Catering | Hannah's Catering Service</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Elegant font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
+    /* =========================
+       BASIC PAGE
+       ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fafafa;
-      color: #333;
+      color: #ffffff;
+      background: #17120e;
     }
 
-    .header {
-      padding: 20px;
-      background: #c0392b;
-      color: white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-align: center;
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 15px 25px;
+
+      background: rgba(0, 0, 0, 0.92);
+
+      box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.5);
     }
+
+
+    .brand {
+      color: #f0c674;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.7rem;
+
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+
+    .home-button {
+      padding: 10px 20px;
+
+      background: #f0c674;
+
+      color: #222;
+
+      border-radius: 30px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      transition: 0.3s ease;
+    }
+
+
+    .home-button:hover {
+      background: white;
+
+      transform: scale(1.05);
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .catering-hero {
+
+      min-height: 78vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 100px 25px;
+
+      background:
+
+        linear-gradient(
+          rgba(0, 0, 0, 0.48),
+          rgba(0, 0, 0, 0.68)
+        ),
+
+        url("https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600")
+        center / cover no-repeat;
+    }
+
+
+    .hero-content {
+      max-width: 950px;
+
+      animation:
+        fadeIn 1.5s ease;
+    }
+
+
+    /* GOLD BUBBLE */
+
+    .hero-bubble {
+
+      display: inline-block;
+
+      padding: 14px 30px;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d4a017,
+          #f0c674,
+          #c98b2e
+        );
+
+      border: 2px solid
+        rgba(255,255,255,0.85);
+
+      color: white;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size: 1.2rem;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      box-shadow:
+        0 5px 25px
+        rgba(0,0,0,0.5);
+
+      margin-bottom: 30px;
+    }
+
+
+    .catering-hero h1 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(3.5rem, 8vw, 7rem);
+
+      font-weight: 500;
+
+      line-height: 0.95;
+
+      margin:
+        0 0 30px;
+
+      text-shadow:
+        0 4px 14px
+        rgba(0,0,0,0.85);
+    }
+
+
+    .catering-hero p {
+
+      max-width: 750px;
+
+      margin: auto;
+
+      font-size: 1.2rem;
+
+      line-height: 1.8;
+
+      color:
+        rgba(255,255,255,0.92);
+
+      text-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.8);
+    }
+
+
+    /* =========================
+       GENERAL SECTION
+       ========================= */
 
     .section {
-      padding: 40px 20px;
-      max-width: 1100px;
+
+      padding: 100px 25px;
+
+      max-width: 1200px;
+
       margin: auto;
     }
 
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-left: 6px solid #c0392b;
-      padding-left: 12px;
+
+    .section-dark {
+
+      background:
+        #211812;
     }
 
-    .menu-grid {
+
+    .section-heading {
+
+      text-align: center;
+
+      max-width: 800px;
+
+      margin:
+        0 auto 60px;
+    }
+
+
+    .section-heading h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(2.8rem, 6vw, 4.5rem);
+
+      font-weight: 500;
+
+      color: #f0c674;
+
+      margin:
+        0 0 20px;
+    }
+
+
+    .section-heading p {
+
+      font-size: 1.1rem;
+
+      line-height: 1.8;
+
+      color:
+        rgba(255,255,255,0.78);
+    }
+
+
+    /* =========================
+       IMAGE + TEXT
+       ========================= */
+
+    .image-text {
+
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+      max-width: 1200px;
+
+      margin: auto;
+    }
+
+
+    .image-text.reverse {
+
+      direction: rtl;
+    }
+
+
+    .image-text.reverse > * {
+
+      direction: ltr;
+    }
+
+
+    .large-image {
+
+      width: 100%;
+
+      height: 520px;
+
+      object-fit: cover;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.5);
+    }
+
+    .text-content h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 3.5rem;
+
+      font-weight: 500;
+
+      color: #f0c674;
+
+      margin:
+        0 0 20px;
+    }
+
+
+    .text-content p {
+
+      font-size: 1.08rem;
+
+      line-height: 1.9;
+
+      color:
+        rgba(255,255,255,0.85);
+
+      margin-bottom: 20px;
+    }
+
+
+    /* =========================
+       CATERING OPTIONS
+       ========================= */
+
+    .options-section {
+
+      background: #17120e;
+
+      padding: 100px 25px;
+    }
+
+
+    .options {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 25px;
+    }
+
+
+    .option {
+
+      padding: 35px 25px;
+
+      text-align: center;
+
+      background:
+        rgba(255,255,255,0.06);
+
+      border:
+        1px solid
+        rgba(240,198,116,0.2);
+
+      border-radius: 18px;
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+    }
+
+
+    .option:hover {
+
+      transform:
+        translateY(-8px);
+
+      background:
+        rgba(240,198,116,0.12);
+    }
+
+
+    .option-icon {
+
+      font-size: 3rem;
+
+      margin-bottom: 20px;
+    }
+
+
+    .option h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 2rem;
+
+      color: #f0c674;
+
+      margin:
+        0 0 12px;
+    }
+
+
+    .option p {
+
+      line-height: 1.6;
+
+      color:
+        rgba(255,255,255,0.75);
+
+      margin: 0;
+    }
+
+
+    /* =========================
+       MENU HIGHLIGHTS
+       ========================= */
+
+    .menu-section {
+
+      padding: 100px 25px;
+
+      background: #211812;
+    }
+
+
+    .food-grid {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 30px;
+    }
+
+
+    .food-card {
+
+      overflow: hidden;
+
+      background:
+        rgba(0,0,0,0.3);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.4);
+    }
+
+
+    .food-card img {
+
+      width: 100%;
+
+      height: 280px;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition:
+        transform 0.5s ease;
+    }
+
+
+    .food-card:hover img {
+
+      transform:
+        scale(1.06);
+    }
+
+
+    .food-card-content {
+
+      padding: 25px;
+    }
+
+
+    .food-card h3 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 2rem;
+
+      color: #f0c674;
+
+      margin:
+        0 0 10px;
+    }
+
+
+    .food-card p {
+
+      line-height: 1.6;
+
+      color:
+        rgba(255,255,255,0.8);
+
+      margin: 0;
+    }
+
+
+    /* =========================
+       ENQUIRY
+       ========================= */
+
+    .enquiry-section {
+
+      padding: 100px 25px;
+
+      background:
+
+        linear-gradient(
+          rgba(0,0,0,0.7),
+          rgba(0,0,0,0.8)
+        ),
+
+        url("https://images.pexels.com/photos/21856021/pexels-photo-21856021.jpeg")
+        center / cover no-repeat;
+    }
+
+
+    .enquiry-box {
+
+      max-width: 900px;
+
+      margin: auto;
+
+      padding: 50px;
+
+      background:
+        rgba(20,15,10,0.9);
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 15px 45px
+        rgba(0,0,0,0.6);
+    }
+
+
+    .enquiry-box h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      text-align: center;
+
+      color: #f0c674;
+
+      font-size: 3.5rem;
+
+      margin:
+        0 0 15px;
+    }
+
+
+    .enquiry-box > p {
+
+      text-align: center;
+
+      color:
+        rgba(255,255,255,0.75);
+
+      line-height: 1.7;
+
+      margin:
+        0 auto 35px;
+
+      max-width: 650px;
+    }
+
+
+    .form-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 20px;
     }
 
-    .item {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: 0.2s;
+
+    .form-group {
+
+      display: flex;
+
+      flex-direction: column;
     }
 
-    .item:hover {
-      transform: scale(1.02);
+
+    .form-group.full {
+
+      grid-column:
+        1 / -1;
     }
 
-    .item img {
+
+    .form-group label {
+
+      margin-bottom: 8px;
+
+      color: #f0c674;
+
+      font-weight: bold;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+
+      padding: 14px;
+
+      border: 1px solid
+        rgba(255,255,255,0.2);
+
+      border-radius: 8px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      color: white;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 1rem;
+
+      outline: none;
     }
 
-    .item-content {
-      padding: 15px;
+
+    .form-group select option {
+
+      color: #222;
     }
 
-    .item h3 {
-      margin: 0 0 10px 0;
-      font-size: 1.2rem;
-      color: #c0392b;
+
+    .form-group textarea {
+
+      min-height: 150px;
+
+      resize: vertical;
     }
 
-    .item p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #555;
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+
+      border-color:
+        #f0c674;
     }
+
+
+    .submit-button {
+
+      display: block;
+
+      margin:
+        30px auto 0;
+
+      padding:
+        15px 35px;
+
+      border: none;
+
+      border-radius: 40px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d4a017,
+          #f0c674,
+          #c98b2e
+        );
+
+      color: #222;
+
+      font-size: 1rem;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease;
+    }
+
+
+    .submit-button:hover {
+
+      transform:
+        scale(1.05);
+    }
+
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contact-section {
+
+      text-align: center;
+
+      padding: 90px 25px;
+
+      background: #0d0a08;
+    }
+
+
+    .contact-section h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 3.5rem;
+
+      color: #f0c674;
+
+      margin:
+        0 0 20px;
+    }
+
+
+    .contact-section p {
+
+      color:
+        rgba(255,255,255,0.75);
+
+      font-size: 1.1rem;
+
+      line-height: 1.7;
+    }
+
+
+    .contact-button {
+
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 14px 30px;
+
+      background: #f0c674;
+
+      color: #222;
+
+      border-radius: 40px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      transition: 0.3s ease;
+    }
+
+
+    .contact-button:hover {
+
+      background: white;
+
+      transform:
+        scale(1.05);
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 50px 20px;
+
+      background: #050403;
+    }
+
+
+    footer h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      color: #f0c674;
+
+      font-size: 1.0rem;
+
+      margin:
+        0 0 10px;
+    }
+
+
+    footer p {
+
+      color:
+        rgba(255,255,255,0.6);
+    }
+
+
+    /* =========================
+       ANIMATION
+       ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(30px);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 800px) {
+
+      .top-bar {
+        padding:
+          12px 15px;
+      }
+
+
+      .brand {
+        font-size: 1.3rem;
+      }
+
+
+      .image-text {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .image-text.reverse {
+
+        direction: ltr;
+      }
+
+
+      .large-image {
+
+        height: 350px;
+      }
+
+
+      .options {
+
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+
+      .food-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .form-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .form-group.full {
+
+        grid-column:
+          auto;
+      }
+
+
+      .enquiry-box {
+
+        padding: 30px 20px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .options {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .catering-hero h1 {
+
+        font-size:
+          3.2rem;
+      }
+
+
+      .hero-bubble {
+
+        font-size:
+          0.85rem;
+
+        letter-spacing:
+          2px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <div class="header">Hannah's Kitchen Menu</div>
 
-  <!-- STARTERS -->
-  <div class="section">
-    <h2>Starters</h2>
-    <div class="menu-grid">
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Mezze Platter</h3>
-          <p>Hummus, baba ganoush, olives, warm flatbread.</p>
-        </div>
+  <nav class="top-bar">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+  
+    </a>
+
+
+    <a
+      href="index.html"
+      class="home-button"
+    >
+      ← Home
+    </a>
+
+  </nav>
+
+
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <header class="catering-hero">
+
+    <div class="hero-content">
+
+      <div class="hero-bubble">
+        Hannah's Catering Service
       </div>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Falafel Bites</h3>
-          <p>Crispy falafel with tahini dip.</p>
-        </div>
+
+      <h1>
+        Delicious Food.<br>
+        Beautifully Served.
+      </h1>
+
+
+      <p>
+        Bring something special to your next event
+        with beautifully prepared food, thoughtful
+        presentation and warm, professional catering.
+      </p>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       INTRODUCTION
+       ========================= -->
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <h2>
+        Catering For Every Occasion
+      </h2>
+
+
+      <p>
+        Whether you are planning an intimate family
+        gathering, a wedding, a corporate event or a
+        special celebration, Hannah's Catering Service
+        can create a menu designed around your occasion.
+      </p>
+
+    </div>
+
+
+    <div class="image-text">
+
+      <img
+        class="large-image"
+        src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Beautifully presented catering food"
+      >
+
+
+      <div class="text-content">
+
+        <h2>
+          Food Made For Your Occasion
+        </h2>
+
+
+        <p>
+          We believe great catering is about more
+          than simply serving food. It is about creating
+          an experience that your guests remember.
+        </p>
+
+
+        <p>
+          Our menus can be adapted to suit your event,
+          your guests and your preferences, with food
+          prepared and presented with care.
+        </p>
+
+
+        <p>
+          From relaxed sharing dishes to elegant
+          individually presented plates, we can help
+          make your event feel truly special.
+        </p>
+
       </div>
 
     </div>
-  </div>
 
-  <!-- MAINS -->
-  <div class="section">
-    <h2>Mains</h2>
-    <div class="menu-grid">
+  </section>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Grilled Chicken Skewers</h3>
-          <p>Marinated chicken served with rice and salad.</p>
+
+
+  <!-- =========================
+       OCCASIONS
+       ========================= -->
+
+  <section class="options-section">
+
+    <div class="section-heading">
+
+      <h2>
+        What We Cater For
+      </h2>
+
+
+      <p>
+        Flexible catering for the occasions
+        that matter most to you.
+      </p>
+
+    </div>
+
+
+    <div class="options">
+
+
+      <div class="option">
+
+        <div class="option-icon">
+          💍
         </div>
+
+        <h3>
+          Weddings
+        </h3>
+
+        <p>
+          Beautiful food and professional
+          catering for your special day.
+        </p>
+
       </div>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Beef Shawarma</h3>
-          <p>Slow‑cooked beef with garlic sauce and pickles.</p>
+
+
+      <div class="option">
+
+        <div class="option-icon">
+          🥂
         </div>
+
+        <h3>
+          Celebrations
+        </h3>
+
+        <p>
+          Birthdays, anniversaries and
+          memorable family occasions.
+        </p>
+
+      </div>
+
+
+
+      <div class="option">
+
+        <div class="option-icon">
+          💼
+        </div>
+
+        <h3>
+          Corporate
+        </h3>
+
+        <p>
+          Professional catering for meetings,
+          lunches and business events.
+        </p>
+
+      </div>
+
+
+
+      <div class="option">
+
+        <div class="option-icon">
+          🍽️
+        </div>
+
+        <h3>
+          Private Dining
+        </h3>
+
+        <p>
+          Enjoy beautifully prepared food
+          in the comfort of your own setting.
+        </p>
+
       </div>
 
     </div>
-  </div>
 
-  <!-- SIDES -->
-  <div class="section">
-    <h2>Sides</h2>
-    <div class="menu-grid">
+  </section>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Tabbouleh</h3>
-          <p>Fresh parsley salad with lemon and bulgur.</p>
+
+
+  <!-- =========================
+       FOOD SECTION
+       ========================= -->
+
+  <section class="menu-section">
+
+    <div class="section-heading">
+
+<div class="section-heading">
+
+  <h2>
+    A Taste of Our Menu
+  </h2>
+
+  <p>
+    Download our Brochure
+    <a href="menu.pdf" target="_blank">
+      Menu
+    </a>
+    for full menu
+  </p>
+
+</div>
+
+
+      <p>
+        A selection of dishes that can form
+        part of your personalised catering menu.
+      </p>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+      <div class="food-card">
+
+        <img
+          src="images/main-dish-1.jpg"
+          alt="Main dish"
+        >
+
+        <div class="food-card-content">
+
+          <h3>
+            Main Dishes
+          </h3>
+
+          <p>
+            Delicious, beautifully prepared main
+            dishes made with fresh ingredients.
+          </p>
+
         </div>
+
       </div>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Roasted Vegetables</h3>
-          <p>Seasonal vegetables roasted with herbs.</p>
+
+
+      <div class="food-card">
+
+        <img
+          src="images/main-dish-3.jpg"
+          alt="Fresh food"
+        >
+
+        <div class="food-card-content">
+
+          <h3>
+            Fresh & Seasonal
+          </h3>
+
+          <p>
+            Fresh ingredients combined into
+            colourful and memorable dishes.
+          </p>
+
         </div>
+
+      </div>
+
+
+
+      <div class="food-card">
+
+        <img
+          src="images/special-dish-1.jpg"
+          alt="Chef special"
+        >
+
+        <div class="food-card-content">
+
+          <h3>
+            Chef's Specials
+          </h3>
+
+          <p>
+            Special creations designed to add
+            something memorable to your event.
+          </p>
+
+        </div>
+
       </div>
 
     </div>
-  </div>
 
-  <!-- DESSERTS -->
-  <div class="section">
-    <h2>Desserts</h2>
-    <div class="menu-grid">
+  </section>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/302680/pexels-photo-302680.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Baklava</h3>
-          <p>Sweet pastry with nuts and honey.</p>
-        </div>
-      </div>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/410999/pexels-photo-410999.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Rose Milk Pudding</h3>
-          <p>Light and fragrant Middle Eastern dessert.</p>
-        </div>
+
+  <!-- =========================
+       SECOND TEXT / IMAGE SECTION
+       ========================= -->
+
+  <section class="section">
+
+    <div class="image-text reverse">
+
+      <img
+        class="large-image"
+        src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Guests enjoying an event"
+      >
+
+
+      <div class="text-content">
+
+        <h2>
+          Your Event, Our Care
+        </h2>
+
+
+        <p>
+          We understand that organising an event
+          involves many details. Our aim is to make
+          the catering side simple and enjoyable.
+        </p>
+
+
+        <p>
+          Tell us about your occasion, the number
+          of guests and the kind of food you have
+          in mind, and we can work with you to create
+          a catering package that suits your needs.
+        </p>
+
+
+        <p>
+          We take pride in delicious food,
+          beautiful presentation and friendly service.
+        </p>
+
       </div>
 
     </div>
-  </div>
 
-  <!-- DRINKS -->
-  <div class="section">
-    <h2>Drinks</h2>
-    <div class="menu-grid">
+  </section>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Mint Lemonade</h3>
-          <p>Fresh mint blended with lemon and ice.</p>
+
+
+  <!-- =========================
+       ENQUIRY
+       ========================= -->
+
+  <section
+    class="enquiry-section"
+    id="enquiry"
+  >
+
+    <div class="enquiry-box">
+
+      <h2>
+        Catering Enquiry
+      </h2>
+
+
+      <p>
+        Planning an event? Tell us a little about
+        what you are looking for and we can discuss
+        your catering requirements with you.
+      </p>
+
+
+      <form
+        action="#"
+        method="post"
+      >
+
+        <div class="form-grid">
+
+
+          <div class="form-group">
+
+            <label for="name">
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+            >
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              required
+            >
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your phone number"
+            >
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="event">
+              Event Type
+            </label>
+
+            <select
+              id="event"
+              name="event"
+            >
+
+              <option value="">
+                Select an event
+              </option>
+
+              <option>
+                Wedding
+              </option>
+
+              <option>
+                Birthday
+              </option>
+
+              <option>
+                Corporate Event
+              </option>
+
+              <option>
+                Private Dining
+              </option>
+
+              <option>
+                Family Celebration
+              </option>
+
+              <option>
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="guests">
+              Number of Guests
+            </label>
+
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              placeholder="Number of guests"
+            >
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="date">
+              Event Date
+            </label>
+
+            <input
+              type="date"
+              id="date"
+              name="date"
+            >
+
+          </div>
+
+
+
+          <div class="form-group full">
+
+            <label for="message">
+              Tell Us About Your Event
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about your event, menu ideas and any requirements..."
+            ></textarea>
+
+          </div>
+
+
         </div>
-      </div>
 
-      <div class="item">
-        <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800">
-        <div class="item-content">
-          <h3>Rose Iced Tea</h3>
-          <p>Floral iced tea with a sweet finish.</p>
-        </div>
-      </div>
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          Request a Catering Quote
+        </button>
+
+      </form>
 
     </div>
-  </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACT
+       ========================= -->
+
+  <section class="contact-section">
+
+    <h2>
+      Let's Make Your Event Special
+    </h2>
+
+
+    <p>
+      Have a question about our catering?
+      We'd love to hear from you.
+    </p>
+
+
+    <a
+      href="contact.html"
+      class="contact-button"
+    >
+      Get in Touch
+    </a>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <h2>
+      Hannah's Catering Service
+    </h2>
+
+
+    <p>
+      Delicious Food. Beautifully Served.
+    </p>
+
+  </footer>
+
 
 </body>
+
 </html>
