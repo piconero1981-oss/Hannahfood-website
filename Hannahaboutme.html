@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400..800&family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
 <style>
+
+
 
 * {
     box-sizing: border-box;
@@ -71,11 +72,38 @@
         padding: 80px 20px;
     }
 
-    .hannah-kitch-logo {
+    .Aboutme {
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        margin-bottom: 4%;
+    }
+
+    .Aboutmemain {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        margin-bottom: 4%;
+    }
+
+    .main-bottom-text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        margin-bottom: 4%;
+    }
+
+      .hannah-kitch-logo {
         object-fit: cover;
         object-position: right;
-        width: 800px;
-        height: 250px;
+        width: 250px;
+        height: 150px;
         image-rendering: optimizeQuality;
         display: block;
         margin-left: auto;
@@ -83,26 +111,7 @@
         margin-bottom: 10%;
         max-width: 100%;
         height: auto;
-        
-}
-
-     .main-body-text {
-        font-family: "Montserrat", sans-serif;
-        font-size: 13px;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left;
-        margin-bottom: 4%;
-}
-
-     .main-bottom-text {
-        font-family: "Montserrat", sans-serif;
-        font-size: 13px;
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left;
-        margin-bottom: 4%;
-}
+      }
 
      .email-address {
         font-family: "Montserrat", sans-serif;
@@ -121,12 +130,11 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+    
 
     }
 
-/* =========================
-       This is slowly faded the page when click I click on one of the menu at the stop of the page
-    ========================= */
+
 body {
     opacity: 1;
     transition: opacity 1s ease;
@@ -150,12 +158,7 @@ body.fade-out {
         <a href="menu-brochure.html">Menu Brochure</a>
         <a href="#contact">Contact</a>
     </div>
-
-  
-    <img class="hannah-kitch-logo" src="images/hannah_kitch_logo.jpg">
-
-    </div>
-
+ <img class="hannah-kitch-logo" src="images/hannah-main-photo.jpg">
     <script>
 
         const menuItems = document.querySelectorAll(".topnav a");
@@ -195,25 +198,37 @@ document.querySelectorAll('a').forEach(function(link) {
 });
 </script>
 
-<!-- =========================
-       Main body text
-       ========================= -->
 
-     <p class="main-body-text">
- Hannah’s Kitchen is a West Virginia-based private chef service offering seasonal, farm-to-table 
- meals tailored to families, intimate gatherings, and special events. Led by Chef Hannah Berry, 
- a longtime Eastern and Northern Virginia resident and passionate local food advocate, the service 
- brings thoughtfully crafted menus to homes throughout Washington, D.C., and nearby communities.
-Every dish is rooted in the freshest local ingredients—sourced from trusted farms, fishermen, and 
-artisans—and prepared with care, creativity, and a deep love of hospitality. Whether you’re hosting 
-a relaxed backyard brunch or a multi-course dinner party, Hannah’s Kitchen delivers a personalized, 
-elevated dining experience right in the comfort of your home.
-      </p>
+<p class="Aboutme">About me</p>
 
-           <p class="main-bottom-text">
-Private chef Hannah's Kitchen offers seasonal, farm-to-table meals made with local ingredients for families, events, and intimate gatherings across the East End.
+<p class="Aboutmemain">Hi, I’m Hannah Berry, a private chef based in West Virginia with a deep love for 
+food, community, and the incredible seasonal ingredients found on the East End. I’ve been working in the 
+restaurant industry for over 20 years, but my passion for cooking started long before that, right at home in the 
+kitchen with my mother.
+She taught me that cooking isn’t just about feeding people. It’s a way to express love, creativity, 
+and care. That early connection to food shaped everything I do today. When I cook for clients, it feels 
+like I’m cooking for friends in my own home. It’s how I express myself, and that energy shows in the quality of 
+every dish I make.
 
-        </p>
+I grew up in West Africa and now live in West Virginia, where I stay closely connected to local farms, 
+fishers, and artisans. I believe the best food starts with the best ingredients, and I’m proud to 
+support the people who grow and raise them. Every menu I create is tailored to your preferences and 
+built around what’s fresh and in season, whether it’s a casual backyard brunch, a cozy family dinner, 
+or a multi-course celebration.
+
+It took me seven years to build a team of chefs I’m proud to send in my name. These are people who share my 
+values, my attention to detail, and my heart for this work. Robyn’s Kitchen has become more than just a 
+personal 
+service. It’s a company I truly believe makes people feel cared for, seen, and happy through food.
+
+When I’m not in the kitchen, you’ll find me exploring farmstands, writing about food and farming, or making 
+memories with my son. Hannah's Kitchen is a reflection of everything I love, and I can’t wait to cook for you.
+</p>
+
+<p class="main-bottom-text">
+Private chef Hannah's Kitchen offers seasonal, farm-to-table meals made with local ingredients for families, 
+events, and intimate gatherings across the East End.
+</p>
 
 <p class="email-address">hannahthomas1977@yahoo.com</p>
 
@@ -221,7 +236,8 @@ Private chef Hannah's Kitchen offers seasonal, farm-to-table meals made with loc
     <img class="instigram-logo" src="images/instigram.jpg">
 </a>
 
-</script>
-
 </body>
 </html>
+
+
+

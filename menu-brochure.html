@@ -119,33 +119,13 @@ body.fade-out {
     opacity: 0;
 }
 
-    .hamburger {
-    display: none;
-}
-
-@media (max-width: 768px) {
-
-    .topnav {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-        font-size: 30px;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-}
 </style>
 </head>
 
 <body>
-   <button class="hamburger" onclick="showMenu()">☰</button>
     <div class="topnav">
         <a href="index.html">Hannah's Kitchen</a>
-        <a href="#hannah">Hannah</a>
+        <a href="Hannahaboutme.html">Hannah</a>
         <a href="#services">Private Chef Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#dishes">Recent Dishes</a>
@@ -193,12 +173,6 @@ document.querySelectorAll('a').forEach(function(link) {
 });
 </script>
  
-<script>
-function showMenu() {
-    document.getElementById("myMenu").classList.toggle("show");
-}
-</script>
-
 <p class="Brochure">
     Please download our
     <a href="images/menu-brochure.pdf" target="_blank">Menu Brochure</a>
