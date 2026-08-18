@@ -124,7 +124,25 @@
 
     }
 
-    
+    .hamburger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .topnav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+}
 /* =========================
        This is slowly faded the page when click I click on one of the menu at the stop of the page
     ========================= */
@@ -152,7 +170,7 @@ body.fade-out {
         <a href="#contact">Contact</a>
     </div>
 
-  
+  <button class="hamburger" onclick="showMenu()">☰</button>
 
     <img class="hannah-kitch-logo" src="images/hannah_kitch_logo.jpg">
 
@@ -213,7 +231,7 @@ elevated dining experience right in the comfort of your home.
       </p>
 
            <p class="main-bottom-text">
-Hamptons private chef Robyn’s Kitchen offers seasonal, farm-to-table meals made with local ingredients for families, events, and intimate gatherings across the East End.
+Private chef Hannah's Kitchen offers seasonal, farm-to-table meals made with local ingredients for families, events, and intimate gatherings across the East End.
 
         </p>
 
@@ -222,6 +240,12 @@ Hamptons private chef Robyn’s Kitchen offers seasonal, farm-to-table meals mad
 <a href="https://www.instagram.com/hannahskitcheninspo/?hl=en" target="_blank">
     <img class="instigram-logo" src="images/instigram.jpg">
 </a>
+
+<script>
+function showMenu() {
+    document.querySelector(".topnav").style.display = "block";
+}
+</script>
 
 </body>
 </html>
